@@ -1,0 +1,19 @@
+In PY :
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        words=s.split()
+        if not words:
+            return 0
+        lword = words[-1]
+        return len(lword)
+
+In Java :
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String[] words = s.split(" ");
+        int n = words.length;
+        String lword = words[n-1];
+        int len = lword.length();
+        return len;
+    }
+}
