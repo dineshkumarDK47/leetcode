@@ -4,7 +4,7 @@ import java.util.*;
 class apple {
     static String check(String pwd){
         StringBuilder sb = new StringBuilder();
-        String[] word=pwd.split(" ");
+        String[] word=pwd.split("\\s+");
         for(int i=word.length-1;i>=0;i--){
             sb.append(word[i]+" ");
         }
