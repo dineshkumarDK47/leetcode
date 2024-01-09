@@ -1,0 +1,18 @@
+// reverse the appearance of words 
+
+import java.util.*;
+class apple {
+    static String check(String pwd){
+        StringBuilder sb = new StringBuilder();
+        String[] word=pwd.split(" ");
+        for(int i=word.length-1;i>=0;i--){
+            sb.append(word[i]+" ");
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        String pwd = "how are you";
+        String res = check(pwd);
+        System.out.print(res);
+    }
+}
