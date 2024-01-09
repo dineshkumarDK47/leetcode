@@ -1,0 +1,36 @@
+//find triplet with given sum in array 
+// input - nums[2,7,4,0,9,5,1,3]
+//target = 6
+// output = triplet exist
+import java.util.*;
+class apples {
+    static void check(int[] arr, int target){
+        Arrays.sort(arr);
+        for(int i=0;i<arr.length-2;i++){
+            int left=i+1;
+            int right = arr.length-1;
+            while(left<right){
+                int sum=arr[i]+arr[left]+arr[right];
+                if(sum==target){
+                    System.out.println("triplet exist");
+                    return;
+                }else if(sum<target){
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+        }
+         System.out.println("triplet doesn't exist");
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int target = 6;
+        check(arr,target);
+    }
+}
