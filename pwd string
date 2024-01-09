@@ -1,0 +1,34 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    static int check(String pwd){
+        int n = pwd.length();
+        if(n<4){
+            return 0;
+        }
+        if(pwd.charAt(0)>='0'&&pwd.charAt(0)<='9'){
+            return 0;
+        }
+        int num=0;
+        int cap=0;
+        for(int i=0;i<n;i++){
+            if(pwd.charAt(i)==' '||pwd.charAt(i)=='/'){
+                return 0;
+            }
+            if(pwd.charAt(i)>='A' && pwd.charAt(i)<='Z'){
+                cap++;
+            }
+            if(pwd.charAt(i)>='0'&&pwd.charAt(i)<='9'){
+                num++;
+            }
+            
+        }
+        return (cap>0&&num>0)?1:0;
+    }
+    public static void main(String[] args) {
+        String pwd = "aA1_67";
+        int res = check(pwd);
+        System.out.print(res);
+    }
+}
