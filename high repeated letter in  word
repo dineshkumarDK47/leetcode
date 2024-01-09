@@ -1,0 +1,37 @@
+// find word which have highest number of repeated letters in string
+
+
+import java.util.*;
+class apple {
+    static String check(String pwd){
+        String res="";
+        String[] letter = pwd.split(" ");
+        int maxlett = 0;
+        for(String word:letter){
+            int repeated = findcount(word);
+            if(repeated>maxlett){
+                maxlett = repeated;
+                res = word;
+            }
+        }
+        return res;
+    }
+    static int findcount(String word){
+        HashMap<Character, Integer> h = new HashMap<>();
+        for(char ch:word.toCharArray()){
+            h.put(ch,h.getOrDefault(ch,0)+1);
+        }
+        int repeat = 0;
+        for(int count:h.values()){
+            if(count>1){
+                repeat+=count;
+            }
+        }
+        return repeat;
+    }
+    public static void main(String[] args) {
+        String pwd = "abcdefg google microsoft";
+        String res = check(pwd);
+        System.out.print(res);
+    }
+}
